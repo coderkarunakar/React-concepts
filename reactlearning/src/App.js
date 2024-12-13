@@ -5,10 +5,28 @@ import './App.css';
 const App = () =>{
    return(
     <div>
-      <ContactCard/>
-      <ContactCard/>
-      <ContactCard/>
-      <ContactCard/>
+      <ContactCard 
+      // this below are called props and if it is a string need to put inside a string other than a string need to put inside a {}
+      avatarUrl = "https://via.placeholder.com/150"
+      name ="Jenny han"
+      email ="jenny.han@notreal.com"
+      age ={25}
+      />
+      <ContactCard
+      avatarUrl = "https://via.placeholder.com/150"
+      name ="Jenny han"
+      email ="jenny.han@notreal.com"
+      age ={25}/>
+      <ContactCard
+      avatarUrl = "https://via.placeholder.com/150"
+      name ="jesy"
+      email ="jesy.han@notreal.com"
+      age ={25}/>
+      <ContactCard
+      avatarUrl = "https://via.placeholder.com/150"
+      name ="peter"
+      email ="peter.han@notreal.com"
+      age ={25}/>
     </div>
  
    )

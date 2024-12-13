@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 // it is a good idea to call component name as our react filename
-const ContactCard =()=> {
+const ContactCard =(props)=> {
+  console.log(props);
   const [showAge,setShowAge] = useState(false);
     return(
     <div className="contact-card">
-    <img src="https://via.placeholder.com/150" alt="profile">
+    <img src={props.avatarUrl} alt="profile">
     </img>
     <div className="user-details">
       {/* hadcoding name email and age */}
-      <p>Name: Jenny hanna</p>
-      <p>Email: jenny.hanna@notreal.com</p>
+      <p>Name: {props.name}</p>
+      <p>Email: {props.email}</p>
       <button onClick={()=>setShowAge(!showAge)}>showAge</button>
-      {showAge ? <p>Age: 25</p> : null}
+      {showAge ? <p>Age: {props.age}</p> : null}
     </div>
 
   </div>
