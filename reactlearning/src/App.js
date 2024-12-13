@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ContactCard from './ContactCard';
 import './App.css';
 //simple arrow function we used to declare a component, this component break down the  UI into smaller , reusable peices, making it easier to manage and develop complex application
@@ -32,12 +32,15 @@ const App = () =>{
 
   const [results, setResults] = useState([]);
   // here we are fetching data from backend json converts to json  and trying to console log the response data
-  fetch("https://randomuser.me/api/?results=5")
-  .then(response => response.json())
-  .then(data => {console.log(data)
-  setResults(data.results)
-  }
-  ); 
+  useEffect(()=>{
+    fetch("https://randomuser.me/api/?results=5")
+    .then(response => response.json())
+    .then(data => {console.log(data)
+    setResults(data.results)
+    }
+    ); 
+  }, [])
+  
 
    return(
     <div>
